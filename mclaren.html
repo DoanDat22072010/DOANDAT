@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>McLaren P1</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: #111;
+            color: white;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .card {
+            background-color: #222;
+            color: white;
+        }
+        .btn-custom {
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="https://i.ytimg.com/vi/2SGlN8xYZiw/sddefault.jpg" class="img-fluid rounded" alt="McLaren P1">
+            </div>
+            <div class="col-md-6">
+                <h1>McLaren P1</h1>
+                <p>McLaren P1 là một siêu xe hybrid hiệu suất cao của Anh, được giới thiệu vào năm 2013. Đây là mẫu xe kế thừa tinh thần của huyền thoại McLaren F1.</p>
+                <ul>
+                    <li><strong>Động cơ:</strong> V8 3.8L Twin-Turbo + Động cơ điện</li>
+                    <li><strong>Công suất:</strong> 903 HP</li>
+                    <li><strong>0-100 km/h:</strong> 2.8 giây</li>
+                    <li><strong>Tốc độ tối đa:</strong> 350 km/h</li>
+                    <li><strong>Giá bán:</strong> 1,200,000  USD</li>
+                </ul>
+                <button class="btn btn-custom" onclick="playSound('audio/mclaren-p1-sound-128-ytshorts.savetube.me.mp3')">Nghe tiếng động cơ</button>
+                <button class="btn btn-success mt-2" onclick="window.location.href='Buy.html'">Mua Ngay</button>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-12 text-center">
+                <h2>Video McLaren P1</h2>
+                <video width="100%" controls>
+                    <source src="video/mclaren-p1-paris-release-video-ytshorts.savetube.me.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <h2>Lịch sử và Công Nghệ McLaren P1</h2>
+                <p>McLaren P1 là siêu xe hybrid plug-in được sản xuất giới hạn chỉ 375 chiếc. Với công nghệ khí động học tiên tiến và hệ thống KERS lấy cảm hứng từ xe đua F1, P1 đem lại hiệu suất đáng kinh ngạc và trải nghiệm lái vượt trội.</p>
+                <p>McLaren thiết kế P1 không chỉ để đạt tốc độ cao mà còn có khả năng vận hành ưu việt trên đường đua lẫn đường phố. Hệ thống DRS và IPAS giúp tối ưu hoá sức mạnh, mang đến cảm giác lái như một chiếc xe đua thực thụ.</p>
+                <p>Với thiết kế nhẹ, khí động học tối ưu và công nghệ hybrid tiên tiến, McLaren P1 đã trở thành một biểu tượng của siêu xe thế kỷ 21.</p>
+            </div>
+        </div>
+    </div>
+    <footer class="text-center mt-5 p-3 bg-dark">
+        <p>© 2025 Hypercar World. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        let currentAudio = null;
+        
+        function playSound(src) {
+            if (currentAudio) {
+                currentAudio.pause();
+                currentAudio.currentTime = 0;
+            }
+            
+            currentAudio = new Audio(src);
+            currentAudio.play();
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

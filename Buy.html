@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mua Xe</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 600px;
+            margin-top: 50px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .car-image {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="text-center mb-4">Mua Xe</h2>
+        <img id="carImage" class="car-image" src="" alt="Car Image">
+        
+        <form id="purchaseForm">
+            <div class="mb-3">
+                <label class="form-label">Họ và Tên</label>
+                <input type="text" class="form-control" id="name" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Số điện thoại</label>
+                <input type="tel" class="form-control" id="phone" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Chọn mẫu xe</label>
+                <select class="form-select" id="carSelect" required>
+                    <option value="">Chọn xe</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Phương thức thanh toán</label>
+                <select class="form-select" id="paymentMethod" required>
+                    <option value="">Chọn phương thức thanh toán</option>
+                    <option value="Credit Card">💳 Thẻ tín dụng</option>
+                    <option value="Bank Transfer">🏦 Chuyển khoản ngân hàng</option>
+                    <option value="Cash">💵 Tiền mặt</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Xác nhận mua</button>
+        </form>
+        <p id="successMessage" class="text-success text-center mt-3" style="display: none;">✅ Đặt hàng thành công!</p>
+    </div>
+
+    <script>
+        // Car data with images
+        const cars = {
+            "Lamborghini Aventador": "https://thainguyentv.vn/stores/news_dataimages/vanminh/072018/12/08/sieu-xe-lamborghini-aventador-bi-loi-chet-may-khi-ve-so-thap-50-.0456.jpg",
+            "Ferrari SF90 Stradale": "https://static-images.vnncdn.net/files/publish/2023/10/30/ferrari-sf90-1-420.jpg",
+            "Audi R8": "https://static-images.vnncdn.net/files/publish/2024/3/23/sieu-xe-audi-r8-vua-duoc-ong-dang-le-nguyen-vu-mua-chinh-thuc-bi-khai-tu-935.jpg?width=0&s=PYGVWBkRQQtfRPX1XzHm9w",
+            "Porsche 911": "https://thegioiphuongtien.vn/uploaded/files/b228dfcd6c0c736b2e27c05b3ecf9fc7.jpg",
+            "McLaren P1": "https://i.ytimg.com/vi/2SGlN8xYZiw/sddefault.jpg",
+            "Bugatti Chiron": "https://xedoisong.vn/uploads/20221030/xedoisong_bugatti_chiron_pur_sport_10_5_nvql.jpg"
+        };
+
+        // Populate car dropdown
+        const carSelect = document.getElementById("carSelect");
+        Object.keys(cars).forEach(car => {
+            const option = document.createElement("option");
+            option.value = car;
+            option.textContent = car;
+            carSelect.appendChild(option);
+        });
+
+        // Update car image when selection changes
+        carSelect.addEventListener("change", function() {
+            const carImage = document.getElementById("carImage");
+            if (this.value) {
+                carImage.src = cars[this.value];
+                carImage.style.display = "block";
+            } else {
+                carImage.style.display = "none";
+            }
+        });
+
+        // Form validation and submission
+        document.getElementById("purchaseForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById("name").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const phone = document.getElementById("phone").value.trim();
+            const car = document.getElementById("carSelect").value;
+            const payment = document.getElementById("paymentMethod").value;
+
+            if (!name || !email || !phone || !car || !payment) {
+                alert("Vui lòng điền đầy đủ thông tin.");
+                return;
+            }
+
+            // Simulate success message
+            document.getElementById("successMessage").style.display = "block";
+            setTimeout(() => {
+                document.getElementById("successMessage").style.display = "none";
+                document.getElementById("purchaseForm").reset();
+                document.getElementById("carImage").style.display = "none";
+            }, 3000);
+        });
+    </script>
+    
+<script>
+        window.onload = function () {
+        const selectedCar = localStorage.getItem("selectedCar");
+        if (selectedCar) {
+            document.getElementById("carSelect").value = selectedCar;
+            document.getElementById("carImage").src = cars[selectedCar];
+            document.getElementById("carImage").style.display = "block";
+        }
+    };</script>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+   
+</body>
+</html>

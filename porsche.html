@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Porsche 911</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: #111;
+            color: white;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .card {
+            background-color: #222;
+            color: white;
+        }
+        .btn-custom {
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="https://thegioiphuongtien.vn/uploaded/files/b228dfcd6c0c736b2e27c05b3ecf9fc7.jpg" class="img-fluid rounded" alt="Porsche 911">
+            </div>
+            <div class="col-md-6">
+                <h1>Porsche 911</h1>
+                <p>Porsche 911 là một trong những dòng xe thể thao mang tính biểu tượng nhất của Đức, nổi bật với thiết kế huyền thoại và hiệu suất vượt trội.</p>
+                <ul>
+                    <li><strong>Động cơ:</strong> 3.0L Twin-Turbo Flat-6</li>
+                    <li><strong>Công suất:</strong> 473 HP</li>
+                    <li><strong>0-100 km/h:</strong> 3.5 giây</li>
+                    <li><strong>Tốc độ tối đa:</strong> 308 km/h</li>
+                    <li><strong>Giá:</strong> 120,000 USD</li>
+                </ul>
+                <button class="btn btn-custom" onclick="playSound('audio/soul-porsche-992-carrera-performance-exhaust-with-m-engineering-tune-128-ytshorts.savetube.me.mp3')">Nghe tiếng động cơ</button>
+                <button class="btn btn-success mt-2" onclick="window.location.href='Buy.html'">Mua Ngay</button>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-12 text-center">
+                <h2>Video Porsche 911</h2>
+                <video width="100%" controls>
+                    <source src="video/poscher.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <h2>Lịch sử và Công Nghệ Porsche 911</h2>
+                <p>Ra mắt lần đầu vào năm 1964, Porsche 911 đã trở thành biểu tượng trong ngành công nghiệp ô tô với thiết kế động cơ đặt sau độc đáo.</p>
+                <p>Với sự cải tiến liên tục qua các thế hệ, 911 không chỉ duy trì được phong cách cổ điển mà còn tích hợp công nghệ hiện đại giúp tối ưu hiệu suất lái.</p>
+                <p>Hệ thống khí động học, dẫn động tiên tiến và khả năng vận hành linh hoạt đã giúp Porsche 911 giữ vững vị trí hàng đầu trong phân khúc xe thể thao.</p>
+            </div>
+        </div>
+    </div>
+    <footer class="text-center mt-5 p-3 bg-dark">
+        <p>© 2025 Supercar Legends. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        let currentAudio = null;
+        
+        function playSound(src) {
+            if (currentAudio) {
+                currentAudio.pause();
+                currentAudio.currentTime = 0;
+            }
+            
+            currentAudio = new Audio(src);
+            currentAudio.play();
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

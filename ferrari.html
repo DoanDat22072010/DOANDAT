@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ferrari SF90 Stradale</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: #111;
+            color: white;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .card {
+            background-color: #222;
+            color: white;
+        }
+        .btn-custom {
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="https://static-images.vnncdn.net/files/publish/2023/10/30/ferrari-sf90-1-420.jpg" class="img-fluid rounded" alt="Ferrari SF90 Stradale">
+            </div>
+            <div class="col-md-6">
+                <h1>Ferrari SF90 Stradale</h1>
+                <p>Ferrari SF90 Stradale là một siêu xe Ý kết hợp công nghệ hybrid với hiệu suất đáng kinh ngạc. Với động cơ V8 4.0L tăng áp kép và ba động cơ điện, tổng công suất đạt 986 mã lực.</p>
+                <ul>
+                    <li><strong>Động cơ:</strong> V8 4.0L Twin-Turbo + Động cơ điện</li>
+                    <li><strong>Công suất:</strong> 986 HP</li>
+                    <li><strong>0-100 km/h:</strong> 2.5 giây</li>
+                    <li><strong>Tốc độ tối đa:</strong> 340 km/h</li>
+                    <li><strong>Giá:</strong> 1,100,000 USD</li>
+                </ul>
+                <button class="btn btn-custom" onclick="playSound('audio/ferari.mp3')">Nghe tiếng động cơ</button>
+                <button class="btn btn-success mt-2" onclick="window.location.href='Buy.html'">Mua Ngay</button>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-12 text-center">
+                <h2>Xem Ferrari SF90 Stradale Hoạt Động</h2>
+                <video width="100%" controls>
+                    <source src="video/ferrari-sf90-stradale-official-video-ytshorts.savetube.me.mp4" type="video/mp4">
+    
+                </video>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <h2>Câu chuyện về Ferrari SF90 Stradale</h2>
+                <p>Ferrari đã giới thiệu SF90 Stradale vào năm 2019 như chiếc siêu xe plug-in hybrid đầu tiên trong dòng sản phẩm của hãng, đánh dấu một bước tiến cách mạng trong lịch sử thương hiệu. Được đặt tên theo kỷ niệm 90 năm thành lập Scuderia Ferrari, SF90 kết hợp công nghệ tiên tiến, khí động học và sức mạnh thuần túy để định nghĩa lại siêu xe hiện đại.</p>
+                <p>SF90 Stradale được trang bị hệ thống dẫn động bốn bánh tiên tiến, giúp nó trở thành một trong những chiếc Ferrari mạnh mẽ nhất từng được chế tạo. Sự kết hợp giữa động cơ đốt trong và động cơ điện mang lại khả năng phân phối sức mạnh mượt mà và hiệu suất vượt trội. Thiết kế của xe lấy cảm hứng từ di sản đua xe của Ferrari, kết hợp hiệu suất và sự sang trọng theo cách chỉ có Ferrari mới có thể đạt được.</p>
+                <p>Với hệ truyền động hybrid, SF90 Stradale chứng minh rằng điện khí hóa không làm giảm hiệu suất mà còn nâng cao nó. Chiếc siêu xe này đại diện cho tương lai của Ferrari, nơi đổi mới và truyền thống gặp nhau để tạo ra trải nghiệm lái xe vô song.</p>
+            </div>
+        </div>
+    </div>
+    <footer class="text-center mt-5 p-3 bg-dark">
+        <p>© 2025 Legendary Motosports.All Rights Reserved.</p>
+    </footer>
+
+
+    <script>
+        let currentAudio = null;
+        
+        function playSound(src) {
+            if (currentAudio) {
+                currentAudio.pause();
+                currentAudio.currentTime = 0;
+            }
+            
+            currentAudio = new Audio(src);
+            currentAudio.play();
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
