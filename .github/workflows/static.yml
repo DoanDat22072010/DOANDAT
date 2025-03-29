@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lamborghini Aventador</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: #111;
+            color: white;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .card {
+            background-color: #222;
+            color: white;
+        }
+        .btn-custom {
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="https://thainguyentv.vn/stores/news_dataimages/vanminh/072018/12/08/sieu-xe-lamborghini-aventador-bi-loi-chet-may-khi-ve-so-thap-50-.0456.jpg" class="img-fluid rounded" alt="Lamborghini Aventador">
+            </div>
+            <div class="col-md-6">
+                <h1>Lamborghini Aventador</h1>
+                <p>Lamborghini Aventador là một trong những siêu xe biểu tượng với động cơ V12 mạnh mẽ, thiết kế khí động học tối ưu và hiệu suất đáng kinh ngạc.</p>
+                <ul>
+                    <li><strong>Động cơ:</strong> V12 6.5L</li>
+                    <li><strong>Công suất:</strong> 770 HP</li>
+                    <li><strong>0-100 km/h:</strong> 2.8 giây</li>
+                    <li><strong>Tốc độ tối đa:</strong> 350 km/h</li>
+                    <li><strong>Giá:</strong> 500,000 USD</li>
+                </ul>
+                <button class="btn btn-custom" onclick="playSound('audio/lambogini.mp3')">Nghe tiếng động cơ</button>
+                <button class="btn btn-success mt-2" onclick="window.location.href='Buy.html'">Mua Ngay</button>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-12 text-center">
+                <h2>Xem Lamborghini Aventador Hoạt Động</h2>
+                <video width="100%" controls>
+                    <source src="video/aventador-svj-shaping-the-future-ytshorts.savetube.me.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <h2>Câu chuyện về Lamborghini Aventador</h2>
+                <p>Lamborghini Aventador ra mắt vào năm 2011, đánh dấu một kỷ nguyên mới trong ngành công nghiệp siêu xe với sự kết hợp giữa hiệu suất và thiết kế tương lai.</p>
+                <p>Được đặt theo tên của một con bò tót huyền thoại, Aventador mang đến sức mạnh đỉnh cao với động cơ V12 hút khí tự nhiên, mang lại âm thanh uy lực và hiệu suất đáng kinh ngạc. Hệ thống dẫn động bốn bánh, hộp số ISR nhanh nhất cùng thiết kế khí động học tối ưu giúp chiếc xe đạt tốc độ cực đại mà vẫn giữ được độ ổn định.</p>
+                <p>Aventador không chỉ là một chiếc siêu xe, mà còn là biểu tượng của Lamborghini với thiết kế mang đậm tính nghệ thuật và hiệu suất vô song, làm hài lòng cả những tay lái khó tính nhất.</p>
+            </div>
+        </div>
+    </div>
+    <footer class="text-center mt-5 p-3 bg-dark">
+        <p>© 2025 Legendary Motosports.All Rights Reserved.</p>
+    </footer>
+
+
+    <script>
+        let currentAudio = null;
+        
+        function playSound(src) {
+            if (currentAudio) {
+                currentAudio.pause();
+                currentAudio.currentTime = 0;
+            }
+            
+            currentAudio = new Audio(src);
+            currentAudio.play();
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
